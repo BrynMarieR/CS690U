@@ -1,5 +1,5 @@
 # Note: you will need to install huggingface_hub, fastparquet
-#import fastparquet
+# import fastparquet
 
 import pandas as pd
 
@@ -9,3 +9,6 @@ df_test = pd.read_parquet("hf://datasets/tattabio/convergent_enzymes/" + splits[
 
 print(df_train.head())
 print(df_test.head())
+
+df_train.to_pickle("train_dataset.pkl")
+df_test.to_pickle("test_dataset.pkl")
