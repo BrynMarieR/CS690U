@@ -51,19 +51,19 @@ The `convergent_enzymes` dataset comprises **DNA sequences of enzymes** annotate
 
 | Model             | Encoding       | Accuracy | Macro F1 |
 |------------------|----------------|----------|----------|
-| Logistic Regression | One-hot (512bp) | TBD      | TBD      |
-| Logistic Regression | 4-mer counts   | TBD      | TBD      |
-| BLAST              | -              | TBD      | TBD      |
-
-_(Results will be filled after final runs)_
+| Logistic Regression | One-hot (512bp) | 0.992      | 0.990      |
+| Logistic Regression | 4-mer counts   | 0.750      | 0.685     |
+| BLAST              | -              | 0.993    | 0.990      |
 
 ---
 
-##  Key Insights
+## Key Insights
 
-- Despite the high divergence in sequence space, logistic regression on interpretable features may still identify functional signals.
-- BLAST is expected to struggle by design (no shared alignment hits), but it provides a useful lower bound.
-- Comparing performance against DGEB's reported ESM-based models allows us to critically evaluate how well foundation models generalize under function-without-homology scenarios.
+- Despite the lack of sequence similarity by design, both BLAST and logistic regression with one-hot encoding achieved near-perfect accuracy and macro F1, suggesting that residual signals or functional motifs may still be detectable.
+- Logistic regression with 4-mer counts performed moderately well after full training (F1 = 0.685), despite poor generalization in cross-validation (F1 = 0.036).
+- BLAST's strong performance was surprising given the data curation style of sequence dissimilarity, there can be  partial alignments or subtle compositional similarities still in the dataset.
+- Overall, traditional approaches—when carefully applied—can match or outperform foundation models like ESM in settings like ConvEnz where function is removed from homology.
+
 
 ---
 
