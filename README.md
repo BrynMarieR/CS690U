@@ -53,20 +53,19 @@ The `convergent_enzymes` dataset comprises **protein sequences of enzymes** anno
 
 ## Methods
 
-### 🔹 Traditional Machine Learning (PyTorch & scikit-learn)
+### Traditional Machine Learning (PyTorch & scikit-learn)
 - **Inputs**: Amino acid sequences 
 - **Encodings**:
   - One-hot encoding (e.g., max-len x 21 )
   - 3-mer count vectors 
 - **Model**: Multinomial Logistic Regression (implemented in PyTorch)
->>>>>>> refs/remotes/origin/main
 - **Evaluation**:
     - Accuracy
     - Macro F1-score
     - 5-fold cross-validation
 
-<<<<<<< HEAD
-### 🔹 BLAST-based Classification
+
+### BLAST-based Classification
 
 - Use `blastp` to search test sequences against the training set
 - Predict EC label based on the top BLAST hit
@@ -77,26 +76,20 @@ The `convergent_enzymes` dataset comprises **protein sequences of enzymes** anno
 
 ## Results Summary
 
-<<<<<<< HEAD
-| Model               | Encoding        | Accuracy | Macro F1 |
-|---------------------|-----------------|----------|----------|
-| Logistic Regression | One-hot (512bp) | 0.992    | 0.990    |
-| Logistic Regression | 4-mer counts    | 0.750    | 0.685    |
-| BLAST               | -               | 0.993    | 0.990    |
-=======
+
 | Model                | Encoding         | Accuracy | Macro F1 |
 |---------------------|------------------|----------|----------|
 | Logistic Regression | One-hot (256 aa) | 1.5%     | 0.011    |
 | Logistic Regression | 3-mer counts     | 0.25%    | 0.00003  |
 | BLAST               | Top hit only     | 0%       | 0%       |
->>>>>>> refs/remotes/origin/main
+
 
 ---
 
 ## Key Insights
 
 
----
+
 
 ## Usage
 
